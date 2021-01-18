@@ -33,7 +33,7 @@ app.get("/", function(req, res) {
     // designatiing the variable to use
     // kindofday is the variable we use in the ejs file and day is the value
     // we want to assign 
-    res.render("list", {kindOfDay: day}); 
+    res.render("list", {kindOfDay: day, newListItems: items}); 
 
 
 });
@@ -43,8 +43,15 @@ app.post("/", function(req, res) {
     // geting the text from the submitted text
     var item=req.body.newItem; 
 
+    // pushing into array
 
-})
+
+    items.push(item); 
+
+    res.redirect("/"); 
+
+}); 
+
 app.listen(3000, function(){
     console.log("Server started on port 3000"); 
 
