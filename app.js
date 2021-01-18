@@ -1,8 +1,14 @@
 
 const express= require("express"); 
 const bodyParser= require("body-parser"); 
+const { urlencoded } = require("body-parser");
 
 const app=express(); 
+
+app.use(bodyParser.urlencoded({extended: true})); 
+
+// creating an array to store the list of toDo list
+var items=[]; 
 
 // checks for a view folder in the home directory for a .ejs file
 // ejs allows you to manipulate html from the backend 
@@ -14,12 +20,12 @@ app.get("/", function(req, res) {
 
     var today = new Date(); 
     var currentDay = today.getDay(); 
-    var day = ""; 
-    if (currentDay === 6 || currentDay===0) {
-        day ="Weekend"; 
-    }else {
-        day = "Weekday"; 
-    }
+
+
+    var options = { weekday: 'long', month: 'long', day: 'numeric' };
+
+    var day=today.toLocaleDateString("en-US", options); 
+
 
     // res.render() function is used to render a view and sends rendered
     // html string to client 
@@ -32,6 +38,13 @@ app.get("/", function(req, res) {
 
 });
 
+app.post("/", function(req, res) {
+
+    // geting the text from the submitted text
+    var item=req.body.newItem; 
+
+
+})
 app.listen(3000, function(){
     console.log("Server started on port 3000"); 
 
