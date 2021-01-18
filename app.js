@@ -30,9 +30,11 @@ app.get("/", function(req, res) {
     // res.render() function is used to render a view and sends rendered
     // html string to client 
     // in this case we are using list.ejs to render the "/" path and
-    // designatiing the variable to use
+    // designating the variable to use
     // kindofday is the variable we use in the ejs file and day is the value
     // we want to assign 
+    // newListItems is the bullet list that we will use in the html
+    
     res.render("list", {kindOfDay: day, newListItems: items}); 
 
 
@@ -44,10 +46,9 @@ app.post("/", function(req, res) {
     var item=req.body.newItem; 
 
     // pushing into array
-
-
     items.push(item); 
 
+    // redirecting to home route
     res.redirect("/"); 
 
 }); 
