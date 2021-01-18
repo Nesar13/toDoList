@@ -22,6 +22,7 @@ app.get("/", function(req, res) {
     var currentDay = today.getDay(); 
 
 
+    // will use this to format time 
     var options = { weekday: 'long', month: 'long', day: 'numeric' };
 
     var day=today.toLocaleDateString("en-US", options); 
