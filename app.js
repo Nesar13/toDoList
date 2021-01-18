@@ -43,6 +43,7 @@ app.get("/", function(req, res) {
 app.post("/", function(req, res) {
 
     // geting the text from the submitted text
+    // note that we are using bodyParser to get the body 
     var item=req.body.newItem; 
 
     // pushing into array
