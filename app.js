@@ -16,13 +16,18 @@ var items=[];
 
 app.set('view engine', 'ejs'); 
 
+// we have to indicate that nodejs will use static files in the public folder
+// we are currently using css 
+
+app.use(express.static("public")); 
+
 app.get("/", function(req, res) {
 
     var today = new Date(); 
     var currentDay = today.getDay(); 
 
 
-    // will use this to format time 
+    // will use this to format date 
     var options = { weekday: 'long', month: 'long', day: 'numeric' };
 
     var day=today.toLocaleDateString("en-US", options); 

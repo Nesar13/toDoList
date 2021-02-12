@@ -4,26 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
+    <link rel="stylesheet" href="css/styles.css">
+    
 </head>
 <body>
+    <div class="box" id="heading">
+        <h1> <%= kindOfDay %> </h1>
+
+    </div>
+
+    <div class="box">
+
+
+    </div>
     
-<!-- we are using ejs scriplest 
+<!-- we are using ejs scriplet 
 must use the tag around js codes for control flow
 on a line by line basis 
 -->
-    <% if (kindOfDay === "Thursday") { %>
-        <h1 style="color: purple"><%= kindOfDay %> ToDo List</h1>
-    <% } else { %>
-    <h1 style="color: blue"><%= kindOfDay %> ToDo List</h1>
-    <% } %>
+<ul>
 
 <!-- for every item in the array, we are creating a 
     new bullet list with the new item  -->
 
-   <% for (var i= 0; i <newListItems.length; i++ ){ %>
-    <li> <%= newListItems[i] %> </li> 
-   <% } %>
-   
+    <% for (var i= 0; i <newListItems.length; i++ ){ %>
+        <li> <%= newListItems[i] %> </li> 
+       <% } %>
+
+</ul>
+ 
+
    
     <!-- we are submitting each item that the user 
         types to a post request which is then pushed to an array -->
