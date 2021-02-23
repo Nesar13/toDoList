@@ -24,15 +24,7 @@ app.use(express.static("public"));
 
 app.get("/", function(req, res) {
 
-    var today = new Date(); 
-    var currentDay = today.getDay(); 
-
-
-    // will use this to format date 
-    var options = { weekday: 'long', month: 'long', day: 'numeric' };
-
-    var day=today.toLocaleDateString("en-US", options); 
-
+   
 
     // res.render() function is used to render a view and sends rendered
     // html string to client 
@@ -71,6 +63,11 @@ app.get("/work", function(req, res) {
     res.render("list", {listTitle: "Work", newListItems: workItems}); 
 }); 
 
+
+app.get("/about", function(req, res){
+
+    res.render("about");
+})
 
 
 app.listen(3000, function(){

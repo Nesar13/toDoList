@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-   
-    <title>To Do List</title>
-    <link rel="stylesheet" href="css/styles.css">
-    
-</head>
-<body>
+<%- include("header") -%>
+<!-- using ejs layouts above to include the header.ejs file -->
+
     <div class="box" id="heading">
         <h1> <%= listTitle %> </h1>
 
@@ -46,6 +39,4 @@
 must use the tag around js codes for control flow
 on a line by line basis 
 -->
-
-</body>
-</html>
+<%- include("footer") -%>
