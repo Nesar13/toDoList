@@ -1,36 +1,39 @@
 
-module.exports.getDate = function () {
+// since module is an object we can create methods such as .getDate to call from app.js 
 
 
-    let today = new Date();
-    let currentDay = today.getDay();
+exports.getDate = function () {
+
+    // since these varaibles will be constant
+    const today = new Date();
+   
 
 
     // will use this to format date 
-    let options = {
+    const options = {
         weekday: 'long',
         month: 'long',
         day: 'numeric'
     };
 
-    let day = today.toLocaleDateString("en-US", options);
+    const day = today.toLocaleDateString("en-US", options);
 
     return day;
 }
 
-module.exports.getDay = function () {
+exports.getDay = function () {
 
 
-    let today = new Date();
-    let currentDay = today.getDay();
+    const today = new Date();
+    const currentDay = today.getDay();
 
 
     // will use this to format date 
-    let options = {
+   const options = {
         weekday: 'long'
     };
 
-    let day = today.toLocaleDateString("en-US", options);
+    const day = today.toLocaleDateString("en-US", options);
 
     return day;
 }

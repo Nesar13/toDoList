@@ -32,7 +32,7 @@ app.get("/", function (req, res) {
     // html string to client 
     // in this case we are using list.ejs to render the "/" path and
     // designating the variable to use
-    // kindofday is the variable we use in the ejs file and day is the value
+    // listTitle is the variable we use in the ejs file and day is the value we assign here
     // we want to assign 
     // newListItems is the bullet list that we will use in the html
     let day = date.getDate();
